@@ -1,0 +1,140 @@
+#allfrm {
+	display: inline-block;
+	width: 700px;
+}
+
+#header {
+	display: inline-block;
+	width: 700px;
+	height: 70px;
+	text-align: center;
+	background-color: #e91e63; 
+	box-shadow: 5px 5px 10px gray;
+	color: white;
+}
+
+#frm {
+	display: inline-block;
+	width: 700px;
+	height: 650px;
+	text-align: center;
+	border: none; 
+	box-shadow: 10px 10px 15px gray;
+	padding-top: 20px;
+}
+#info {
+	padding-bottom: 10px;
+}
+label {
+	display: inline-block;
+	width: 20%;
+	font-size: 13pt; 
+	color: gray;
+	text-align: right;
+	float: left;
+}
+#name, #pw, #pwck, #mail, #tel {
+	display: inline-block;
+	width: 70%;
+	height: 30px;
+	margin-right: 30px;
+}
+#id {
+	display: inline-block;
+	width: 50%;
+	height: 30px;
+}
+#idck{
+	display: inline-block;
+	width: 19%;
+	height: 30px;
+	border: 0px solid white;
+	background-color: #2196f3;
+	color: white;
+	margin-right: 30px;
+	cursor: pointer;
+}
+#idck:hover {
+	background-color: blue;
+}
+#idspan {
+	display: inline-block;
+	width: 100%;
+	height: 30px;
+	padding-top: 10px;
+	color:#4caf50;
+}
+#mgen  {
+	display: inline-block;
+	margin-left: 160px;
+	height: 20px;
+	float: left;
+}
+#fgen  {
+	display: inline-block;
+	margin-left: 120px;
+	height: 20px;
+	float: left;
+}
+.avtimg{
+	width: 90px;
+	height: 100px;
+}
+.avtinput {
+	display: inline-block;
+	width: 20%;
+	height: 20px;
+}
+.avtdiv1 {
+	padding-left: 120px;
+	float: left;
+}
+.avtdiv2 {
+	padding-left: 10px;
+	float: left;
+}
+
+#btndiv {
+	display: inline-block;
+	width: 700px;
+	height: 70px;
+	text-align: center;
+	font-size: 0pt;
+	padding-top: 30px;
+}
+#rbtn {
+	display: inline-block;
+	width: 33.3%;
+	height: 30px;
+	cursor: pointer;
+	border: 0px solid white;
+	background-color: #ff5722;
+	color: white;
+}
+#rbtn:hover {
+	background-color: red;
+}
+#hbtn {
+	display: inline-block;
+	width: 33.3%;
+	height: 30px;
+	cursor: pointer;
+	border: 0px solid white;
+	background-color: #4caf50;
+	color: white;
+}
+#hbtn:hover {
+	background-color: green;
+}
+#jbtn {
+	display: inline-block;
+	width: 33.3%;
+	height: 30px;
+	cursor: pointer;
+	border: 0px solid white;
+	background-color: #2196f3;
+	color: white;
+}
+#jbtn:hover {
+	background-color: blue;
+}

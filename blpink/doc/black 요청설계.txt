@@ -1,0 +1,6 @@
+# main 페이지 보기 요청
+요청내용	:	/blpink/main.black
+파라미터	:	무
+컨트롤러	:	com.githrd.blpink.conroller.BlpMain
+뷰			:	/WEB-INF/views/main.jsp
+--------------------------------------------------------------------------------
