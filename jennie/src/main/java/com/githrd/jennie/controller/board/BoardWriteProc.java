@@ -8,12 +8,12 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.githrd.jennie.controller.BlpInter;
 
-public class BoardWrite implements BlpInter {
+public class BoardWriteProc implements BlpInter {
 
 	@Override
 	public String exec(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		String view = "/board/boardWrite";
-		
+		req.setAttribute("isRedirect", resp);
+		String view = "/jennie";
 		return view;
 	}
 
