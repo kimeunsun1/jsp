@@ -5,10 +5,23 @@ import java.util.Date;
 import java.text.*;
 
 public class FileVO {
-	private int fno, mno, rno, cnt;
+	private int bno, fno, mno, rno, cnt;
 	private long len;
-	private String oriname, savename, dir, sdate, stime;
+	private String id, oriname, savename, dir, sdate, stime;
 	private Date wdate;
+	private Time wtime;
+	public int getBno() {
+		return bno;
+	}
+	public void setBno(int bno) {
+		this.bno = bno;
+	}
+	public String getId() {
+		return id;
+	}
+	public void setId(String id) {
+		this.id = id;
+	}
 	public int getFno() {
 		return fno;
 	}
@@ -60,40 +73,47 @@ public class FileVO {
 	public String getSdate() {
 		return sdate;
 	}
+	public void setSdate() {
+		SimpleDateFormat form = new SimpleDateFormat("yyyyÎÖÑ MMÏõî ddÏùº");
+		sdate = form.format(wdate);
+	}
 	public void setSdate(String sdate) {
 		this.sdate = sdate;
-	}
-	public void setSdate() {
-		SimpleDateFormat form = new SimpleDateFormat("yyyy≥‚ MMø˘ dd¿œ");
-		sdate = form.format(wdate);
 	}
 	public String getStime() {
 		return stime;
 	}
-	public void setStime(String stime) {
-		this.stime = stime;
-	}
 	public void setStime() {
 		SimpleDateFormat form = new SimpleDateFormat("HH24:mm:ss");
 		stime = form.format(wtime);
+	}
+	public void setStime(String stime) {
+		this.stime = stime;
 	}
 	public Date getWdate() {
 		return wdate;
 	}
 	public void setWdate(Date wdate) {
 		this.wdate = wdate;
+		setSdate();
 	}
 	public Time getWtime() {
 		return wtime;
 	}
 	public void setWtime(Time wtime) {
 		this.wtime = wtime;
+		setStime();
 	}
-	private Time wtime;
 	@Override
 	public String toString() {
 		return "FileVO [fno=" + fno + ", mno=" + mno + ", rno=" + rno + ", cnt=" + cnt + ", len=" + len + ", oriname="
 				+ oriname + ", savename=" + savename + ", dir=" + dir + ", sdate=" + sdate + ", stime=" + stime
-				+ ", wdate=" + wdate + ", wtime=" + wtime + "]";
+				+ ", wdate=" + wdate + ", wtime=" + wtime + ", getFno()=" + getFno() + ", getMno()=" + getMno()
+				+ ", getRno()=" + getRno() + ", getCnt()=" + getCnt() + ", getLen()=" + getLen() + ", getOriname()="
+				+ getOriname() + ", getSavename()=" + getSavename() + ", getDir()=" + getDir() + ", getSdate()="
+				+ getSdate() + ", getStime()=" + getStime() + ", getWdate()=" + getWdate() + ", getWtime()="
+				+ getWtime() + ", getClass()=" + getClass() + ", hashCode()=" + hashCode() + ", toString()="
+				+ super.toString() + "]";
 	}
+	
 }

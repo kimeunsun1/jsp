@@ -1,11 +1,11 @@
-package com.githrd.blpink.controller;
+package com.camp24.controller.kimes;
 
 import java.io.*;
 
 import javax.servlet.*;
 import javax.servlet.http.*;
 
-public interface BlpInter {
+public interface CmpInter {
 	String exec(HttpServletRequest req, HttpServletResponse resp) 
 									throws ServletException, IOException;
 }

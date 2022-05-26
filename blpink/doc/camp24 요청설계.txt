@@ -1,0 +1,75 @@
+# main 페이지 보기 요청
+요청내용	:	/camp24/main.cmp
+파라미터	:	무
+컨트롤러	:	com.camp24.controller.kimes.CmpMain
+뷰			:	/WEB-INF/views/main.jsp
+--------------------------------------------------------------
+# 회원가입 폼보기 요청 
+요청내용	: 	/camp24/join.cmp
+파라미터	:	무
+컨트롤러	: 	com.camp24.controller.kimes.JoinForm
+뷰			:	/WEB-INF/views/join.jsp
+기타		: 	로그인 된 경우 ]
+					redirect : /camp24/main.cmp
+--------------------------------------------------------------
+# 아이디체크 처리 요청 
+요청내용	: 	/camp24/idCheck.cmp
+파라미터	:	id
+컨트롤러	: 	com.camp24.controller.kimes.IdCheck
+뷰			:	json
+--------------------------------------------------------------
+# 회원가입 처리 요청 
+요청내용	: 	/camp24/joinProc.cmp
+파라미터	:	mname, id, pw, email, tel, avt, gen
+컨트롤러	: 	com.camp24.controller.kimes.JoinProc
+뷰			:	
+		 		redirect ]
+					성공 : /camp24/main.cmp
+					실패 : /camp24/join.cmp
+--------------------------------------------------------------
+# 마이페이지 수정 폼보기 요청 
+요청내용	: 	/camp24/editInfo.cmp
+파라미터	:	무
+컨트롤러	: 	com.camp24.controller.kimes.EditInfo
+뷰			:	/WEB-INF/views/editInfo.jsp
+--------------------------------------------------------------
+# 마이페이지 수정 처리 요청 
+요청내용	: 	/camp24/editProc.cmp
+파라미터	:	mno, pw, mail, tel, ano 
+컨트롤러	: 	com.camp24.controller.kimes.EditProc
+뷰			:	
+				redirect ]
+					성공 :	/camp24/myInfo.cmp
+					실패 :  /camp24/editInfo.cmp
+					
+==============================================================
+# 로그인 폼보기 요청 
+요청내용	: 	/camp24/ex/login.cmp
+파라미터	:	무
+컨트롤러	: 	com.camp24.controller.kimes.ex.LoginForm
+뷰			:	/WEB-INF/views/ex/login.jsp
+기타		: 	로그인 된 경우 ]
+					redirect : /camp24/main.cmp
+--------------------------------------------------------------
+# 로그인 처리 요청 
+요청내용	: 	/camp24/ex/loginProc.cmp
+파라미터	:	id, pw
+컨트롤러	: 	com.camp24.controller.kimes.ex.LoginProc
+뷰			:	
+			 	redirect ]
+					성공 : /camp24/main.cmp
+					실패 : /camp24/ex/login.cmp
+--------------------------------------------------------------					
+# 로그아웃 처리 요청 
+요청내용	: 	/camp24/ex/logout.cmp
+파라미터	:	무
+컨트롤러	: 	com.camp24.controller.kimes.ex.Logout
+뷰			:	
+			 	redirect ] /camp24/main.cmp
+--------------------------------------------------------------
+# 내정보 폼보기 요청 
+요청내용	: 	/camp24/ex/myInfo.cmp
+파라미터	:	무
+컨트롤러	: 	com.camp24.controller.kimes.ex.MyInfo
+뷰			:	/WEB-INF/views/ex/memberInfo.jsp
+--------------------------------------------------------------
