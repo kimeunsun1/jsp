@@ -72,6 +72,7 @@
 				<div class="w3-col s8 mgl10 mgb10">
 					<input type="password" id="repw" class="w3-col w3-input w3-border">
 					<span class="w3-col w3-text-red w3-center" id="repwmsg"># 비밀번호가 일치하지 않습니다.</span>
+					<input type="hidden" name="idCheck" id="idCheck" value="N">
 				</div>
 			</div>
 			<div>
@@ -112,7 +113,7 @@
 		
 		<!-- 버튼 태그 -->
 		<div class="w3-col w3-margin-top w3-card-4"> 
-			<div class="w3-col w3-gray w3-hover-aqua w3-button" id="ebtn">edit</div> 
+			<div class="w3-col w3-gray w3-hover-dark-gray w3-button" id="ebtn">edit</div> 
 		</div>
 	</div>
 </body>

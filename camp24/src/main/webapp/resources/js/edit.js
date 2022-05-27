@@ -22,17 +22,17 @@ $(document).ready(function(){
 	
 	$('repwmsg').css('display','none');
 	$('#pw').keyup(function(){
-		var id = $('#pw').val();
+		var pw = $('#pw').val();
 		
-		if(id == ''){
+		if(pw == ''){
 			$('#repwmsg').css('display', 'none');
 		}
 	});
 	
 	$('#repw').keyup(function(){
-		var id = $('#repw').val();
+		var repw = $('#repw').val();
 		
-		if(id == ''){
+		if(repw == ''){
 			$('#repwmsg').css('display', 'none');
 		}
 	});
@@ -68,17 +68,26 @@ $(document).ready(function(){
 			$('#pw').prop('disabled', true);
 		} else {
 			var pwdRegExp =/^(?=.*?[a-z])(?=.*?[A-Z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$/;
-			/*var pwdRegExp =/^[0-9]{4}$/;*/
 			if(pwdRegExp.test($('#pw').val())){
 				$(".pw.pwdRegExp").html("");
 			} else {
-				alert("비밀 번호는 4 ~ 10개의 영문 대소문자, 숫자, 특수문자로 생성해야 합니다. 형식에 맞게 입력해주세요"); 
+				alert("비밀 번호는 8개 이상의 영문 대소문자, 숫자, 특수문자로 생성해야 합니다. 형식에 맞게 입력해주세요"); 
 				$("#pw").val(""); 
-				$("#pwck").val(""); 
+				$("#repw").val(""); 
 				$("#pw").focus(); 
 				return;
 			}
 		}
+		
+		if($('#pw').val() != ''){
+			if($('#pwCheck').val() != 'Y'){
+				alert("비밀번호를 확인해주세요.");
+				$("#repw").val("");
+				$('#repw').eq(0).focus();
+				return;
+			}
+		}
+		
 		
 		if(tmail == mail){
 			// 메일이 수정 안된경우
@@ -118,8 +127,10 @@ $(document).ready(function(){
 			}
 		}
 		
-		if((tname == name) &&!pw && (tmail == mail) && (ttel == tel) && (tano == ano)){
+		if((tname == name) && !pw && (tmail == mail) && (ttel == tel) && (tano == ano)){
 			// 수정사항이 없는 경우
+			$('#frm').attr('action', '/camp24/ex/myInfo.cmp');
+			$('#frm').submit();
 			return;
 		}
 

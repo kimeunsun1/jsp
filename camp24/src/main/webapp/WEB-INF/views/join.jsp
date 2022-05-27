@@ -137,7 +137,7 @@
 		</form>
 	</div>	
 		<div class="w3-content w3-margin-top w3-card-4 w3-center mxw700">
-			<div class="w3-col w3-gray w3-button" id="jbtn">회원가입</div> 
+			<div class="w3-col w3-gray  w3-hover-dark-gray w3-button" id="jbtn">회원가입</div> 
 	</div>
 </body>
 </html>

@@ -104,17 +104,17 @@ $(document).ready(function(){
 	
 	$('repwmsg').css('display','none');
 	$('#pw').keyup(function(){
-		var id = $('#pw').val();
+		var pw = $('#pw').val();
 		
-		if(id == ''){
+		if(pw == ''){
 			$('#repwmsg').css('display', 'none');
 		}
 	});
 	
 	$('#repw').keyup(function(){
-		var id = $('#repw').val();
+		var repw = $('#repw').val();
 		
-		if(id == ''){
+		if(repw == ''){
 			$('#repwmsg').css('display', 'none');
 		}
 	});
@@ -162,7 +162,7 @@ $(document).ready(function(){
 		if(pwdRegExp.test($('#pw').val())){
 			$(".pw.pwdRegExp").html("");
 		} else {
-			alert("비밀 번호는 4 ~ 10개의 영문 대소문자, 숫자, 특수문자로 생성해야 합니다. 형식에 맞게 입력해주세요"); 
+			alert("비밀 번호는 8개 이상의 영문 대소문자, 숫자, 특수문자로 생성해야 합니다. 형식에 맞게 입력해주세요"); 
 			$("#pw").val(""); 
 			$("#repw").val(""); 
 			$("#pw").focus(); 
@@ -171,9 +171,10 @@ $(document).ready(function(){
 		
 		if($('#pwCheck').val() != 'Y'){
 			alert("비밀번호를 확인해주세요.");
+			$("#repw").val("");
 			$('#repw').eq(0).focus();
 			return false;
-		} else
+		}
 		
 		var telRegExp =/^01[0-9]{1}-[0-9]{3,4}-[0-9]{4}$/;
 		if(telRegExp.test($('#tel').val())){
