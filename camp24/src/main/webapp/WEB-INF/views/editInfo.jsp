@@ -64,6 +64,7 @@
 				<label for="pw" class="w3-col s3 w3-right-align clrgrey ft14 mgb10">비밀번호 : </label>
 				<div class="w3-col s8 mgl10 mgb10">
 					<input type="password" name="pw" id="pw" class="w3-col w3-input w3-border">
+					<input type="hidden" name="pwCheck" id="pwCheck" value="N">
 				</div>
 			</div>
 			<div>

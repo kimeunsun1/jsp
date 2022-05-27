@@ -76,6 +76,7 @@
 				<div class="w3-col s8 mgl10 mgb10">
 					<input type="password" id="repw" class="w3-col w3-input w3-border w3-margin-bottom" placeholder="내용을 입력해주세요">
 					<span class="w3-col w3-text-red w3-center" id="repwmsg"># 비밀번호가 일치하지 않습니다.</span>
+					<input type="hidden" name="pwCheck" id="pwCheck" value="N">
 				</div>
 			</div>
 			<div>
@@ -85,10 +86,9 @@
 			<div>
 				<label for="mail" class="w3-col s3 w3-right-align clrgrey ft14 mgb10">이메일 : </label>
 				<div class="w3-col s8 mgl10">
-				<div class="w3-button w3-gray w3-right pd9-16 w3-margin-left" id="idck">이메일 인증</div>
+				<div class="w3-button w3-gray w3-right pd9-16 w3-margin-left" id="mailck">이메일 인증</div>
 					<div class="w3-rest pdr10">
-						<!-- <input type="text" name="id" id="id" class="w3-input w3-border mgb10 w3-margin-bottom" placeholder="내용을 입력해주세요"> -->
-						<input type="text" name="mail" id="mail" class="w3-col s8 mgl10 w3-input w3-border mgb10 w3-margin-bottom" placeholder="내용을 입력해주세요">
+						<input type="text" name="mail" id="mail" class="w3-input w3-border mgb10 w3-margin-bottom" placeholder="내용을 입력해주세요">
 					</div>
 					<span class="w3-col mgb10 w3-center" id="idmsg"></span>
 				</div>
@@ -135,7 +135,7 @@
 			</div>
 		
 		</form>
-		
+	</div>	
 		<div class="w3-content w3-margin-top w3-card-4 w3-center mxw700">
 			<div class="w3-col w3-gray w3-button" id="jbtn">회원가입</div> 
 	</div>

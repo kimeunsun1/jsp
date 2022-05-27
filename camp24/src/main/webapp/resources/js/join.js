@@ -97,6 +97,7 @@ $(document).ready(function(){
 				$('#repwmsg').html('* # 비밀번호가 일치합니다. *');
 				$('#repwmsg').removeClass('w3-text-green w3-text-red').addClass('w3-text-green');
 				$('#repwmsg').css('display', 'block');
+				$('#pwCheck').val('Y');
 			}
 		}
 	});
@@ -123,16 +124,20 @@ $(document).ready(function(){
 		// 사용가능 유무 판단
 		var name = $('#name').val();
 		
-		var gen = $('[name="gen"]:checked').val();
-		var ano = $('[name="ano"]:checked').val();
-		
-		for(var i = 0 ; i < name.length ; i++ ){
+		/*for(var i = 0 ; i < name.length ; i++ ){
 			var txt = $(name).eq(i).val();
 			if(!txt){
 				alert('# 이름의 입력사항을 확인해주세요!');
 				$(name).eq(i).focus();
 				return;
 			}
+		}*/
+		
+		var name = $('#name').val();
+		if(!name){
+			alert('# 이름의 입력사항을 확인해주세요!');
+			$(name).focus();
+			return;
 		}
 		
 		var idRegExp =/^[a-zA-Z0-9]{4,10}$/;
@@ -146,7 +151,7 @@ $(document).ready(function(){
 			return;
 		}
 		
-		if($('#idCheck').val()!='Y'){
+		if($('#idCheck').val() != 'Y'){
 			alert("아이디 중복체크를 해주세요.");
 			$('#idCheck').eq(0).focus();
 			return false;
@@ -159,8 +164,24 @@ $(document).ready(function(){
 		} else {
 			alert("비밀 번호는 4 ~ 10개의 영문 대소문자, 숫자, 특수문자로 생성해야 합니다. 형식에 맞게 입력해주세요"); 
 			$("#pw").val(""); 
-			$("#pwck").val(""); 
+			$("#repw").val(""); 
 			$("#pw").focus(); 
+			return;
+		}
+		
+		if($('#pwCheck').val() != 'Y'){
+			alert("비밀번호를 확인해주세요.");
+			$('#repw').eq(0).focus();
+			return false;
+		} else
+		
+		var telRegExp =/^01[0-9]{1}-[0-9]{3,4}-[0-9]{4}$/;
+		if(telRegExp.test($('#tel').val())){
+			$(".tel.pwdRegExp").html("");
+		} else {
+			alert("휴대전화번호는 01*-***-**** 또는 01*-****-**** 형태의 숫자로 생성해야 합니다. 형식에 맞게 입력해주세요"); 
+			$("#tel").val(""); 
+			$("#tel").focus(); 
 			return;
 		}
 		
@@ -174,16 +195,8 @@ $(document).ready(function(){
 			return;
 		}
 		
-		var telRegExp =/^01[0-9]{1}-[0-9]{3,4}-[0-9]{4}$/;
-		if(telRegExp.test($('#tel').val())){
-			$(".tel.pwdRegExp").html("");
-		} else {
-			alert("휴대전화번호는 01*-***-**** 또는 01*-****-**** 형태의 숫자로 생성해야 합니다. 형식에 맞게 입력해주세요"); 
-			$("#tel").val(""); 
-			$("#tel").focus(); 
-			return;
-		}
-		
+		var gen = $('[name="gen"]:checked').val();
+		var ano = $('[name="ano"]:checked').val();
 		if(!(gen && ano)){
 			alert('# 성별과 아바타 입력사항을 확인해주세요!');
 			return;

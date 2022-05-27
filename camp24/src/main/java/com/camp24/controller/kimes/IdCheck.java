@@ -27,9 +27,11 @@ public class IdCheck implements CmpInter {
 		req.setAttribute("isRedirect", null);
 		StringBuffer buff = new StringBuffer();
 		
+		
 		// 할일
 		// 파라미터 가져오기
 		String id = req.getParameter("id");
+		
 		// 데이터베이스에 요청
 		MemberDao mDao = new MemberDao();
 		// 결과 받기
